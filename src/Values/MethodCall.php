@@ -36,6 +36,9 @@ class MethodCall extends CallableType
         return [$this->subject, $this->method];
     }
 
+    /**
+     * @throws InvalidArgumentException if method is not implemented
+     */
     public static function build(object $instance, string $method): self
     {
         if (method_exists($instance, $method)) {

@@ -35,4 +35,5 @@ abstract class CallableType
     }
 
     abstract public function action(): callable;
+
 }

@@ -34,9 +34,12 @@ class InvokableCall extends CallableType
         return $this->invokable;
     }
 
+    /**
+     * @throws InvalidArgumentException if instance is not invokable
+     */
     public static function build(object $instance)
     {
-        if(method_exists($instance, '__invoke')){
+        if (method_exists($instance, '__invoke')) {
             return new self($instance);
         }
 
