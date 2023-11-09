@@ -15,26 +15,30 @@ declare(strict_types=1);
 namespace Ascetik\Callabubble\Values;
 
 use Ascetik\Callabubble\Types\CallableType;
-use Closure;
 
 /**
- * Encapsulate a Closure
+ * Encapsulate an instance and the method to call
  *
  * @version 1.0.0
  */
-class ClosureCall implements CallableType
+class MethodCall implements CallableType
 {
-    public function __construct(private readonly Closure $function)
-    {
+    public function __construct(
+        private readonly object $subject,
+        private readonly string $method
+    ) {
     }
 
     public function apply(iterable $parameters = []): mixed
     {
-        return call_user_func_array($this->function, iterator_to_array($parameters));
+        return call_user_func_array(
+            $this->action(),
+            iterator_to_array($parameters)
+        );
     }
 
-    public function action(): Closure
+    public function action(): array
     {
-        return $this->function;
+        return [$this->subject, $this->method];
     }
 }
