@@ -4,7 +4,7 @@
  * This is part of the ascetik/callabubble package
  *
  * @package    Callabubble
- * @category   Interface
+ * @category   Abstraction
  * @license    https://opensource.org/license/mit/  MIT License
  * @copyright  Copyright (c) 2023, Vidda
  * @author     Vidda <vidda@ascetik.fr>
@@ -21,10 +21,18 @@ namespace Ascetik\Callabubble\Types;
  * A CallableType MUST be able to execute the callable it handles with optionnal parameters.
  * A CallableType MUST be able to return its callable as is (for dependency injection, for example)
  *
+ * @abstract
  * @version 1.0.0
  */
-interface CallableType
+abstract class CallableType
 {
-    public function apply(iterable $parameters = []): mixed;
-    public function action(): callable;
+    public function apply(iterable $parameters = []): mixed
+    {
+        return call_user_func_array(
+            $this->action(),
+            iterator_to_array($parameters)
+        );
+    }
+
+    abstract public function action(): callable;
 }
