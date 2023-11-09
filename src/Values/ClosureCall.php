@@ -22,15 +22,10 @@ use Closure;
  *
  * @version 1.0.0
  */
-class ClosureCall implements CallableType
+class ClosureCall extends CallableType
 {
     public function __construct(private readonly Closure $function)
     {
-    }
-
-    public function apply(iterable $parameters = []): mixed
-    {
-        return call_user_func_array($this->function, iterator_to_array($parameters));
     }
 
     public function action(): Closure
