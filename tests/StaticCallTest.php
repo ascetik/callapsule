@@ -2,6 +2,9 @@
 
 namespace Ascetik\Callabubble\Tests;
 
+use Ascetik\Callabubble\Exceptions\ClassNotFoundException;
+use Ascetik\Callabubble\Exceptions\MethodNotImplementedException;
+use Ascetik\Callabubble\Tests\Mocks\Foo;
 use Ascetik\Callabubble\Tests\Mocks\Greeter;
 use Ascetik\Callabubble\Values\StaticCall;
 use PHPUnit\Framework\TestCase;
@@ -29,5 +32,18 @@ class StaticCallTest extends TestCase
             call_user_func($action,'John')
         );
     }
+
+    public function testShouldThrowAnExceptionOnInvalidClassName()
+    {
+        $this->expectException(ClassNotFoundException::class);
+        StaticCall::build('Bar','foo');
+    }
+
+    public function testShouldThrowAnExceptionOnUnavailableMethod()
+    {
+        $this->expectException(MethodNotImplementedException::class);
+        StaticCall::build(Foo::class,'foo');
+    }
+   
 
 }
