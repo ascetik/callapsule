@@ -86,6 +86,8 @@ Direct instanciation (public constructor)
 
 No Errors/Exceptions thrown
 
+Method *getClosure()* to get **Closure** fully returned type.
+
 ### InvokableCall
 
 Holds an *invokable* instance.

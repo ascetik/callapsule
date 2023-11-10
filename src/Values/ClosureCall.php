@@ -30,6 +30,11 @@ class ClosureCall extends CallableType
 
     public function action(): callable
     {
+        return $this->getClosure();
+    }
+
+    public function getClosure(): Closure
+    {
         return $this->function;
     }
 }
