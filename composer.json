@@ -8,11 +8,18 @@
             "Ascetik\\Callabubble\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Ascetik\\Callabubble\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "ascetik",
             "email": "ascetik@free.fr"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^10.4"
+    }
 }
