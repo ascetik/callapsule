@@ -41,7 +41,7 @@ class StaticCall extends CallableType
     public static function build(string $className, string $method): self
     {
         if (!class_exists($className)) {
-
+            
             throw new InvalidArgumentException('The class "' . $className . '" has not been found');
         }
         if (!method_exists($className, $method)) {
