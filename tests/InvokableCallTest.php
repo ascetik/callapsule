@@ -1,11 +1,11 @@
 <?php
 
-namespace Ascetik\Callabubble\Tests;
+namespace Ascetik\Callapsule\Tests;
 
-use Ascetik\Callabubble\Exceptions\UninvokableClassException;
-use Ascetik\Callabubble\Tests\Mocks\Foo;
-use Ascetik\Callabubble\Tests\Mocks\Greeter;
-use Ascetik\Callabubble\Values\InvokableCall;
+use Ascetik\Callapsule\Exceptions\UninvokableClassException;
+use Ascetik\Callapsule\Tests\Mocks\Foo;
+use Ascetik\Callapsule\Tests\Mocks\Greeter;
+use Ascetik\Callapsule\Values\InvokableCall;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 

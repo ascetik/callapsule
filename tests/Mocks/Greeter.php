@@ -1,6 +1,6 @@
 <?php
 
-namespace Ascetik\Callabubble\Tests\Mocks;
+namespace Ascetik\Callapsule\Tests\Mocks;
 
 class Greeter
 {
