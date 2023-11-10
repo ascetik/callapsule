@@ -2,6 +2,8 @@
 
 namespace Ascetik\Callabubble\Tests;
 
+use Ascetik\Callabubble\Exceptions\MethodNotImplementedException;
+use Ascetik\Callabubble\Tests\Mocks\Foo;
 use Ascetik\Callabubble\Tests\Mocks\Greeter;
 use Ascetik\Callabubble\Values\MethodCall;
 use PHPUnit\Framework\TestCase;
@@ -27,6 +29,12 @@ class MethodCallTest extends TestCase
             'hello John',
             call_user_func($action,'John')
         );
+    }
+
+    public function testShouldThrowAnExceptionIfMethodIsNotImplemented()
+    {
+        $this->expectException(MethodNotImplementedException::class);
+        MethodCall::build(new Foo, 'bar');
     }
 
 }
