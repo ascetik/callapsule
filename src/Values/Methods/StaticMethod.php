@@ -17,8 +17,8 @@ namespace Ascetik\Callabubble\Values\Methods;
 class StaticMethod
 {
     public function __construct(
-        public readonly string $className,
-        public readonly string $method
+        private string $className,
+        private string $method
     ) {
     }
 
