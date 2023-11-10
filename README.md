@@ -8,7 +8,7 @@ I needed this kind of package for routing or a service manager, any task to defe
 
 ## Release notes
 
-> v0.1.1
+> v0.2.0
 
 - **CallableType** abstract class available.
 - 3 Exceptions availalbe, extending a **CallableTypeException** abstract class that is an **InvalidArgumentException** himself.
@@ -67,7 +67,8 @@ echo $closureWrapper->apply(['name' => 'John']); // same result
 ## CallableType methods
 
 - **CallableType**::apply(*?iterable*): *mixed* : execute callable and return the result
-- **CallableType**::callable(): *callable*      : return wrapped callable
+- **CallableType**::action(): *callable*        : return wrapped callable type-hinted as *callable*
+- **CallableType**::getCallable(): *object*     : return wrapped callable fully type-hinted
 
 ## Implementations
 
@@ -100,6 +101,8 @@ Static factory method for checks.
 
 Throws a **MethodNotImplementedException** if given method is not implemented.
 
+> *getCallable* method returns a **ClassMethod** instance with a *get()* method returning the callable array.
+
 ### StaticCall
 
 Holds a class name and a method name.
@@ -108,5 +111,6 @@ Static factory for checks.
 Throws a **ClassNotFoundException** if given class does not exist.
 Throws a **MethodNotImplementedException** if given method is not implemented.
 
+> *getCallable* method returns a **ClassMethod** instance with a *get()* method returning the callable array.
 
 

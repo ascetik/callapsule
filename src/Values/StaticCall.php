@@ -17,6 +17,7 @@ namespace Ascetik\Callabubble\Values;
 use Ascetik\Callabubble\Exceptions\ClassNotFoundException;
 use Ascetik\Callabubble\Exceptions\MethodNotImplementedException;
 use Ascetik\Callabubble\Types\CallableType;
+use Ascetik\Callabubble\Values\Methods\StaticMethod;
 use InvalidArgumentException;
 
 /**
@@ -32,9 +33,13 @@ class StaticCall extends CallableType
 
     public function action(): callable
     {
-        return [$this->subject, $this->method];
+        return $this->getCallable()->get();
     }
 
+    public function getCallable(): StaticMethod
+    {
+        return new StaticMethod($this->subject, $this->method);
+    }
 
     /**
      * @throws InvalidArgumentException if class does not exist

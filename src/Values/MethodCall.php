@@ -16,6 +16,8 @@ namespace Ascetik\Callabubble\Values;
 
 use Ascetik\Callabubble\Exceptions\MethodNotImplementedException;
 use Ascetik\Callabubble\Types\CallableType;
+use Ascetik\Callabubble\Types\ClassMethod;
+use Ascetik\Callabubble\Values\Methods\InstanceMethod;
 
 /**
  * Encapsulate an instance and the method to call
@@ -32,7 +34,12 @@ class MethodCall extends CallableType
 
     public function action(): callable
     {
-        return [$this->subject, $this->method];
+        return $this->getCallable()->get();
+    }
+
+    public function getCallable(): ClassMethod
+    {
+        return new InstanceMethod($this->subject, $this->method);
     }
 
     /**
