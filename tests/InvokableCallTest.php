@@ -2,6 +2,7 @@
 
 namespace Ascetik\Callabubble\Tests;
 
+use Ascetik\Callabubble\Exceptions\UninvokableClassException;
 use Ascetik\Callabubble\Tests\Mocks\Foo;
 use Ascetik\Callabubble\Tests\Mocks\Greeter;
 use Ascetik\Callabubble\Values\InvokableCall;
@@ -33,7 +34,7 @@ class InvokableCallTest extends TestCase
 
     public function testShouldThrowAnExceptionOnUninvokableClass()
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(UninvokableClassException::class);
         $this->expectExceptionMessage('This instance is not invokable');
         InvokableCall::build(new Foo);
     }
