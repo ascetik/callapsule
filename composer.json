@@ -8,6 +8,11 @@
             "Ascetik\\Callabubble\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Ascetik\\Callabubble\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "ascetik",
