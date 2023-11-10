@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ascetik\Callabubble\Tests\Mocks;
+namespace Ascetik\Callabubble\Tests;
 
 use Ascetik\Callabubble\Values\ClosureCall;
 use PHPUnit\Framework\TestCase;
