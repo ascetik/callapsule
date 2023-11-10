@@ -14,7 +14,9 @@ declare(strict_types=1);
 
 namespace Ascetik\Callabubble\Exceptions;
 
-class MethodNotImplementedException extends \InvalidArgumentException
+use Ascetik\Callabubble\Types\CallableTypeException;
+
+class MethodNotImplementedException extends CallableTypeException
 {
     public function __construct(string $method)
     {

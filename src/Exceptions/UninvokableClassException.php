@@ -14,7 +14,9 @@ declare(strict_types=1);
 
 namespace Ascetik\Callabubble\Exceptions;
 
-class UninvokableClassException extends \InvalidArgumentException
+use Ascetik\Callabubble\Types\CallableTypeException;
+
+class UninvokableClassException extends CallableTypeException
 {
     public function __construct()
     {

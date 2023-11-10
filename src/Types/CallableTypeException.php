@@ -12,14 +12,9 @@
 
 declare(strict_types=1);
 
-namespace Ascetik\Callabubble\Exceptions;
+namespace Ascetik\Callabubble\Types;
 
-use Ascetik\Callabubble\Types\CallableTypeException;
-
-class ClassNotFoundException extends CallableTypeException
+abstract class CallableTypeException extends \InvalidArgumentException
 {
-    public function __construct(string $className)
-    {
-        $this->message = 'Class "' . $className . '" not found';
-    }
+    //
 }
