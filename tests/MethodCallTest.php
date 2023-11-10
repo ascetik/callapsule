@@ -21,9 +21,11 @@ class MethodCallTest extends TestCase
 
     public function testShouldBeAbleToReturnClosureBack()
     {
+        $action = $this->wrapper->action();
+        $this->assertInstanceOf(Greeter::class, $action[0]);
         $this->assertSame(
             'hello John',
-            call_user_func($this->wrapper->action(),'John')
+            call_user_func($action,'John')
         );
     }
 
