@@ -31,10 +31,10 @@ class InvokableCall extends CallableType
 
     public function action(): callable
     {
-        return $this->getInvokable();
+        return $this->getCallable();
     }
 
-    public function getInvokable(): object
+    public function getCallable(): object
     {
         return $this->invokable;
     }
