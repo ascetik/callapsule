@@ -36,6 +36,6 @@ abstract class CallableType
         );
     }
 
-    abstract public function action(): object|array;
+    abstract public function action(): callable;
 
 }
