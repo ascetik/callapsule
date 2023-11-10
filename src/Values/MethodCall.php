@@ -14,8 +14,8 @@ declare(strict_types=1);
 
 namespace Ascetik\Callabubble\Values;
 
+use Ascetik\Callabubble\Exceptions\MethodNotImplementedException;
 use Ascetik\Callabubble\Types\CallableType;
-use InvalidArgumentException;
 
 /**
  * Encapsulate an instance and the method to call
@@ -30,21 +30,19 @@ class MethodCall extends CallableType
     ) {
     }
 
-
-    public function action(): array
+    public function action(): callable
     {
         return [$this->subject, $this->method];
     }
 
     /**
-     * @throws InvalidArgumentException if method is not implemented
+     * @throws MethodNotImplementedException if method is not implemented
      */
     public static function build(object $instance, string $method): self
     {
         if (method_exists($instance, $method)) {
             return new self($instance, $method);
         }
-
-        throw new InvalidArgumentException('The method "' . $method . '" is not implemented');
+        throw new MethodNotImplementedException($method);
     }
 }

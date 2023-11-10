@@ -14,8 +14,8 @@ declare(strict_types=1);
 
 namespace Ascetik\Callabubble\Values;
 
+use Ascetik\Callabubble\Exceptions\UninvokableClassException;
 use Ascetik\Callabubble\Types\CallableType;
-use InvalidArgumentException;
 
 /**
  * Encapsulate an instance implementing
@@ -29,20 +29,19 @@ class InvokableCall extends CallableType
     {
     }
 
-    public function action(): object
+    public function action(): callable
     {
         return $this->invokable;
     }
 
     /**
-     * @throws InvalidArgumentException if instance is not invokable
+     * @throws UninvokableClassException if instance is not invokable
      */
     public static function build(object $instance)
     {
         if (method_exists($instance, '__invoke')) {
             return new self($instance);
         }
-
-        throw new InvalidArgumentException('This instance is not invokable');
+        throw new UninvokableClassException();
     }
 }

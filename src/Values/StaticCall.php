@@ -14,6 +14,8 @@ declare(strict_types=1);
 
 namespace Ascetik\Callabubble\Values;
 
+use Ascetik\Callabubble\Exceptions\ClassNotFoundException;
+use Ascetik\Callabubble\Exceptions\MethodNotImplementedException;
 use Ascetik\Callabubble\Types\CallableType;
 use InvalidArgumentException;
 
@@ -28,7 +30,7 @@ class StaticCall extends CallableType
     {
     }
 
-    public function action(): array
+    public function action(): callable
     {
         return [$this->subject, $this->method];
     }
@@ -41,11 +43,10 @@ class StaticCall extends CallableType
     public static function build(string $className, string $method): self
     {
         if (!class_exists($className)) {
-
-            throw new InvalidArgumentException('The class "' . $className . '" has not been found');
+            throw new ClassNotFoundException($className);
         }
         if (!method_exists($className, $method)) {
-            throw new InvalidArgumentException('The method "' . $method . '" is not implemented');
+            throw new MethodNotImplementedException($method);
         }
 
         return new self($className, $method);
