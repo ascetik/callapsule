@@ -8,7 +8,7 @@ I needed this kind of package for routing or a service manager, any task to defe
 
 ## Release notes
 
-> v0.1.0
+> v0.1.1
 
 - **CallableType** abstract class available.
 - 3 Exceptions availalbe, extending a **CallableTypeException** abstract class that is an **InvalidArgumentException** himself.
