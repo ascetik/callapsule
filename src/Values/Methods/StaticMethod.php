@@ -12,7 +12,7 @@
 
 declare(strict_types=1);
 
-namespace Ascetik\Callabubble\Values\Methods;
+namespace Ascetik\Callapsule\Values\Methods;
 
 class StaticMethod
 {

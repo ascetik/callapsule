@@ -12,12 +12,12 @@
 
 declare(strict_types=1);
 
-namespace Ascetik\Callabubble\Values;
+namespace Ascetik\Callapsule\Values;
 
-use Ascetik\Callabubble\Exceptions\MethodNotImplementedException;
-use Ascetik\Callabubble\Types\CallableType;
-use Ascetik\Callabubble\Types\ClassMethod;
-use Ascetik\Callabubble\Values\Methods\InstanceMethod;
+use Ascetik\Callapsule\Exceptions\MethodNotImplementedException;
+use Ascetik\Callapsule\Types\CallableType;
+use Ascetik\Callapsule\Types\ClassMethod;
+use Ascetik\Callapsule\Values\Methods\InstanceMethod;
 
 /**
  * Encapsulate an instance and the method to call
