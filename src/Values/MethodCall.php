@@ -32,6 +32,11 @@ class MethodCall extends CallableType
 
     public function action(): callable
     {
+        return $this->getMethod();
+    }
+
+    public function getMethod(): array
+    {
         return [$this->subject, $this->method];
     }
 

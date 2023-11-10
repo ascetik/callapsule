@@ -32,9 +32,13 @@ class StaticCall extends CallableType
 
     public function action(): callable
     {
-        return [$this->subject, $this->method];
+        return $this->getStaticMethod();
     }
 
+    public function getStaticMethod(): array
+    {
+        return [$this->subject, $this->method];
+    }
 
     /**
      * @throws InvalidArgumentException if class does not exist
