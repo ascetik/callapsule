@@ -12,7 +12,7 @@
 
 declare(strict_types=1);
 
-namespace Ascetik\Callabubble\Types;
+namespace Ascetik\Callapsule\Types;
 
 use Closure;
 
