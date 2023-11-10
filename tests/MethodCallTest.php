@@ -1,11 +1,11 @@
 <?php
 
-namespace Ascetik\Callabubble\Tests;
+namespace Ascetik\Callapsule\Tests;
 
-use Ascetik\Callabubble\Exceptions\MethodNotImplementedException;
-use Ascetik\Callabubble\Tests\Mocks\Foo;
-use Ascetik\Callabubble\Tests\Mocks\Greeter;
-use Ascetik\Callabubble\Values\MethodCall;
+use Ascetik\Callapsule\Exceptions\MethodNotImplementedException;
+use Ascetik\Callapsule\Tests\Mocks\Foo;
+use Ascetik\Callapsule\Tests\Mocks\Greeter;
+use Ascetik\Callapsule\Values\MethodCall;
 use PHPUnit\Framework\TestCase;
 
 class MethodCallTest extends TestCase

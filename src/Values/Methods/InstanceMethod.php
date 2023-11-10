@@ -12,9 +12,9 @@
 
 declare(strict_types=1);
 
-namespace Ascetik\Callabubble\Values\Methods;
+namespace Ascetik\Callapsule\Values\Methods;
 
-use Ascetik\Callabubble\Types\ClassMethod;
+use Ascetik\Callapsule\Types\ClassMethod;
 
 class InstanceMethod implements ClassMethod
 {

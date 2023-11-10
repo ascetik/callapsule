@@ -12,10 +12,10 @@
 
 declare(strict_types=1);
 
-namespace Ascetik\Callabubble\Values;
+namespace Ascetik\Callapsule\Values;
 
-use Ascetik\Callabubble\Exceptions\UninvokableClassException;
-use Ascetik\Callabubble\Types\CallableType;
+use Ascetik\Callapsule\Exceptions\UninvokableClassException;
+use Ascetik\Callapsule\Types\CallableType;
 
 /**
  * Encapsulate an instance implementing

@@ -12,13 +12,13 @@
 
 declare(strict_types=1);
 
-namespace Ascetik\Callabubble\Factories;
+namespace Ascetik\Callapsule\Factories;
 
-use Ascetik\Callabubble\Types\CallableType;
-use Ascetik\Callabubble\Values\ClosureCall;
-use Ascetik\Callabubble\Values\InvokableCall;
-use Ascetik\Callabubble\Values\MethodCall;
-use Ascetik\Callabubble\Values\StaticCall;
+use Ascetik\Callapsule\Types\CallableType;
+use Ascetik\Callapsule\Values\ClosureCall;
+use Ascetik\Callapsule\Values\InvokableCall;
+use Ascetik\Callapsule\Values\MethodCall;
+use Ascetik\Callapsule\Values\StaticCall;
 use Closure;
 use InvalidArgumentException;
 use OutOfRangeException;

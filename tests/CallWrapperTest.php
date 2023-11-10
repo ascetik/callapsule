@@ -1,13 +1,13 @@
 <?php
 
-namespace Ascetik\Callabubble\Tests;
+namespace Ascetik\Callapsule\Tests;
 
-use Ascetik\Callabubble\Factories\CallWrapper;
-use Ascetik\Callabubble\Tests\Mocks\Greeter;
-use Ascetik\Callabubble\Values\ClosureCall;
-use Ascetik\Callabubble\Values\InvokableCall;
-use Ascetik\Callabubble\Values\MethodCall;
-use Ascetik\Callabubble\Values\StaticCall;
+use Ascetik\Callapsule\Factories\CallWrapper;
+use Ascetik\Callapsule\Tests\Mocks\Greeter;
+use Ascetik\Callapsule\Values\ClosureCall;
+use Ascetik\Callapsule\Values\InvokableCall;
+use Ascetik\Callapsule\Values\MethodCall;
+use Ascetik\Callapsule\Values\StaticCall;
 use PHPUnit\Framework\TestCase;
 
 class CallWrapperTest extends TestCase

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Ascetik\Callabubble\Tests;
+namespace Ascetik\Callapsule\Tests;
 
-use Ascetik\Callabubble\Values\ClosureCall;
+use Ascetik\Callapsule\Values\ClosureCall;
 use PHPUnit\Framework\TestCase;
 
 class ClosureCallTest extends TestCase

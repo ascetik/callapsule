@@ -12,9 +12,9 @@
 
 declare(strict_types=1);
 
-namespace Ascetik\Callabubble\Exceptions;
+namespace Ascetik\Callapsule\Exceptions;
 
-use Ascetik\Callabubble\Types\CallableTypeException;
+use Ascetik\Callapsule\Types\CallableTypeException;
 
 class UninvokableClassException extends CallableTypeException
 {
