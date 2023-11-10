@@ -30,7 +30,7 @@ class StaticCall extends CallableType
     {
     }
 
-    public function action(): callable
+    public function action(): array
     {
         return [$this->subject, $this->method];
     }

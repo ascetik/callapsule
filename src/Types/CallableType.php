@@ -14,6 +14,8 @@ declare(strict_types=1);
 
 namespace Ascetik\Callabubble\Types;
 
+use Closure;
+
 /**
  * Describe the behavior of a
  * callable wrapper.
@@ -34,6 +36,6 @@ abstract class CallableType
         );
     }
 
-    abstract public function action(): callable;
+    abstract public function action(): object|array;
 
 }
