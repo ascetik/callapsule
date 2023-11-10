@@ -2,8 +2,10 @@
 
 namespace Ascetik\Callabubble\Tests;
 
+use Ascetik\Callabubble\Tests\Mocks\Foo;
 use Ascetik\Callabubble\Tests\Mocks\Greeter;
 use Ascetik\Callabubble\Values\InvokableCall;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class InvokableCallTest extends TestCase
@@ -29,4 +31,10 @@ class InvokableCallTest extends TestCase
         );
     }
 
+    public function testShouldThrowAnExceptionOnUninvokableClass()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('This instance is not invokable');
+        InvokableCall::build(new Foo);
+    }
 }
