@@ -8,7 +8,7 @@ I needed this kind of package for routing or a service manager, any task to defe
 
 ## Release notes
 
-> v0.3.1
+> v0.4.0
 
 - **CallableType** abstract *getReflection()* method.
 
