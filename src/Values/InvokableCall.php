@@ -16,6 +16,8 @@ namespace Ascetik\Callapsule\Values;
 
 use Ascetik\Callapsule\Exceptions\UninvokableClassException;
 use Ascetik\Callapsule\Types\CallableType;
+use ReflectionFunctionAbstract;
+use ReflectionMethod;
 
 /**
  * Encapsulate an instance implementing
@@ -37,6 +39,11 @@ class InvokableCall extends CallableType
     public function getCallable(): object
     {
         return $this->invokable;
+    }
+
+    public function getReflection(): ReflectionMethod
+    {
+        return new ReflectionMethod($this->invokable,'__invoke');
     }
 
     /**
