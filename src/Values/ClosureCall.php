@@ -16,6 +16,7 @@ namespace Ascetik\Callapsule\Values;
 
 use Ascetik\Callapsule\Types\CallableType;
 use Closure;
+use ReflectionFunction;
 
 /**
  * Encapsulate a Closure
@@ -36,5 +37,10 @@ class ClosureCall extends CallableType
     public function getCallable(): Closure
     {
         return $this->function;
+    }
+
+    public function getReflection(): ReflectionFunction
+    {
+        return new ReflectionFunction($this->function);
     }
 }

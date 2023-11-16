@@ -8,12 +8,9 @@ I needed this kind of package for routing or a service manager, any task to defe
 
 ## Release notes
 
-> v0.3.0
+> v0.4.0
 
-- **CallableType** abstract class available.
-- 3 Exceptions availalbe, extending a **CallableTypeException** abstract class that is an **InvalidArgumentException** himself.
-- 4 **CallableType** implementations for functions, methods, static methods and invokable instances.
-- **CallWrapper** Factory available
+- **CallableType** abstract *getReflection()* method.
 
 ## Usage
 

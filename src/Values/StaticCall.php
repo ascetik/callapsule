@@ -19,6 +19,7 @@ use Ascetik\Callapsule\Exceptions\MethodNotImplementedException;
 use Ascetik\Callapsule\Types\CallableType;
 use Ascetik\Callapsule\Values\Methods\StaticMethod;
 use InvalidArgumentException;
+use ReflectionMethod;
 
 /**
  * Encapsulate a class name and a static method to call
@@ -39,6 +40,11 @@ class StaticCall extends CallableType
     public function getCallable(): StaticMethod
     {
         return new StaticMethod($this->subject, $this->method);
+    }
+
+    public function getReflection(): ReflectionMethod
+    {
+        return new ReflectionMethod($this->subject, $this->method);
     }
 
     /**

@@ -18,6 +18,7 @@ use Ascetik\Callapsule\Exceptions\MethodNotImplementedException;
 use Ascetik\Callapsule\Types\CallableType;
 use Ascetik\Callapsule\Types\ClassMethod;
 use Ascetik\Callapsule\Values\Methods\InstanceMethod;
+use ReflectionMethod;
 
 /**
  * Encapsulate an instance and the method to call
@@ -40,6 +41,11 @@ class MethodCall extends CallableType
     public function getCallable(): ClassMethod
     {
         return new InstanceMethod($this->subject, $this->method);
+    }
+
+    public function getReflection(): ReflectionMethod
+    {
+        return new ReflectionMethod($this->subject, $this->method);
     }
 
     /**

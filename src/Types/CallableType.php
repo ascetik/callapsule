@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Ascetik\Callapsule\Types;
 
-use Closure;
+use ReflectionFunctionAbstract;
 
 /**
  * Describe the behavior of a
@@ -38,5 +38,6 @@ abstract class CallableType
 
     abstract public function action(): callable;
     abstract public function getCallable(): object;
+    abstract public function getReflection():ReflectionFunctionAbstract;
 
 }
